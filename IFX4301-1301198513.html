@@ -94,23 +94,17 @@
         return (4 - (2.1 * Math.pow(x[0], 2)) + (Math.pow(x[0], 4) / 3)) * Math.pow(x[0], 2) + (x[0] * x[1]) + (-4 + (4 * Math.pow(x[1], 2))) * Math.pow(x[1], 2)
     }
 
-    // Tentukan Batasan
+    // [START limit, generate chromosome, and generate popution]
+    // Set Limits
     limit = [[-3, 3], [-2, 2]]
 
-    /**
-     * Tentukan Bentuk Pemilihan Chromosome (Cara termuda adalah real value)
-     * for (var i = 0; i < 10; i++) {
-     *  console.log(generate_chromosome())
-     * }
-     */
+    
+    // Determine the Chromosome Selection Form (The youngest way is real value)
     function generate_chromosome() {
         return [Math.random() * (limit[0][1] - limit[0][0]) + limit[0][0], Math.random() * (limit[1][1] - limit[1][0]) + limit[1][0]]
     }
 
-    /**
-     * Buat Populasi
-     * console.log(generate_population(5))
-     */
+    // Create Population
     function generate_population(size) {
         population = []
         for (var i = 0; i < size; i++) {
@@ -118,6 +112,7 @@
         }
         return population
     }
+    // [END limit, generate chromosome, and generate popution]
 
     /**
      * Tentukan Fitness Function
